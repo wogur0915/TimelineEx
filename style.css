@@ -9,8 +9,14 @@ table{
 	font-size: 0.9em;
 	text-align:center;
 	width: 600px;
-	height: 600px;
+	height: 500px;
 	margin-left:150px;
+}
+
+.table {
+    width: 800px;
+    height: 300px;
+	table-layout: fixed;
 }
 
 th, td{
@@ -30,23 +36,29 @@ td {
 	height: 60px;
 	text-align: center;
 	vertical-align: middle;
+	text-align:center;
 	font-weight: bold;
 }
 
 caption{
 	font-size:30px;
 	margin-bottom:15px;
-	margin-top:100px;
+	margin-top:40px;
 	text-align:center;
 }
 
 form {
-	margin-top:150px;
-	/* margin-right:150px; */
+	position: absolute;
+	top: 200px;
+	right: 750px;
 }
 
 #btnAdd {
 	position: absolute;
-	top: 630px;
-	right: 250px;
+	top: 450px;
+	right: 50px;
+}
+
+th:first-child, td:first-child {
+  width: 30px;
 }

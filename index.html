@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="container" style="float:left; width:40%">
-	<table width=400 height="600" style="color: #121212" class="table caption-top" id="timeline-table">
+	<table style="color: #121212; width:800px; height:300px;" class="table caption-top" id="timeline-table">
 	<caption>▶   4학년 1학기 시간표  ◀</caption>
 	  <tr>
 		<th></th>
@@ -90,6 +90,14 @@
 	    <td></td>
 		<td></td>
 	  </tr>
+	  <tr>
+		<th>6</th>
+		<td></td>
+		<td></td>
+		<td></td>
+	    <td></td>
+		<td></td>
+	  </tr>
 	</table>
 	</div>
 
@@ -147,7 +155,7 @@
 		<input type="text" id="roomno" name="roomno" required class="form-control">
 	  </div>
 	  <button type="submit" id="btnAdd" class="btn btn-primary mb-2">추가하기</button>
-		<p id="1a">
+		<!-- <p id="1a">
 			요일
 		</p>
 		<p id="2a">
@@ -167,7 +175,7 @@
 		</p>
 		<p id="6a">
 			강의실
-		</p>
+		</p> -->
 	</form>
 	</div>
 	
@@ -195,13 +203,13 @@
 			// const timeCell = row.insertCell(1);
 			// const subjectCell = row.insertCell(2);
 
-			document.getElementById("1a").innerHTML = dayOfWeek;
-			document.getElementById("2a").innerHTML = startTime;
-			document.getElementById("3a").innerHTML = endTime;
-			document.getElementById("4a").innerHTML = subjectName;
-			document.getElementById("5a").innerHTML = profname;
-			document.getElementById("6a").innerHTML = roomNo;
-			document.getElementById("1b").innerHTML = timeGap;
+			// document.getElementById("1a").innerHTML = dayOfWeek;
+			// document.getElementById("2a").innerHTML = startTime;
+			// document.getElementById("3a").innerHTML = endTime;
+			// document.getElementById("4a").innerHTML = subjectName;
+			// document.getElementById("5a").innerHTML = profname;
+			// document.getElementById("6a").innerHTML = roomNo;
+			// document.getElementById("1b").innerHTML = timeGap;
 			
 			if (dayOfWeek == "Mon") {
 				columnNum = 1;
@@ -309,9 +317,22 @@
 					rowNum = 9;
 			}
 			table.rows[rowNum].cells[columnNum].innerHTML = '<p style="white-space:pre;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>';
-
+			table.rows[rowNum].cells[columnNum].style.backgroundColor = getRandomColor();
 			form.reset();
 		});
+		
+		function getRandomColor() {
+			var red = Math.floor(Math.random() * 100) + 100;	
+			var green = Math.floor(Math.random() * 100) + 100;
+			var blue = Math.floor(Math.random() * 100) + 100;
+			return "rgb(" + red + ", " + green + ", " + blue + ")";
+		}
+		
+		var tableRows = table.rows;
+		for (var i = 1; i < tableRows.length; i++) {
+			tableRows[i].style.height = "100px";
+		}
+
 	</script>
 </body>
 </html>
