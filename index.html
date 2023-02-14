@@ -11,23 +11,15 @@
 	<table style="color: #121212; width:800px; height:300px;" class="table caption-top" id="timeline-table">
 	<caption>▶   4학년 1학기 시간표  ◀</caption>
 	  <tr>
-		<th></th>
-		<th>월</th>
-		<th>화</th>
-		<th>수</th>
-		<th>목</th>
-		<th>금</th>
+		<th style="background-color:#FFDBF8;"></th>
+		<th style="background-color:#FFDBF8;">월</th>
+		<th style="background-color:#FFDBF8;">화</th>
+		<th style="background-color:#FFDBF8;">수</th>
+		<th style="background-color:#FFDBF8;">목</th>
+		<th style="background-color:#FFDBF8;">금</th>
 	  </tr>
 	  <tr>
-		<th>9</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	  </tr>
-	  <tr>
-		<th>10</th>
+		<th>9시<br>1교시</th>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -35,7 +27,7 @@
 		<td></td>
 	  </tr>
 	  <tr>
-		<th>11</th>
+		<th>10시<br>2교시</th>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -43,7 +35,7 @@
 		<td></td>
 	  </tr>
 	  <tr>
-		<th>12</th>
+		<th>11시<br>3교시</th>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -51,7 +43,7 @@
 		<td></td>
 	  </tr>
 	  <tr>
-		<th>1</th>
+		<th>12시<br>4교시</th>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -59,7 +51,7 @@
 		<td></td>
 	  </tr>
 	  <tr>
-		<th>2</th>
+		<th>13시<br>5교시</th>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -67,7 +59,7 @@
 		<td></td>
 	  </tr>
 	  <tr>
-		<th>3</th>
+		<th>14시<br>6교시</th>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -75,7 +67,7 @@
 		<td></td>
 	  </tr>
 	  <tr>
-		<th>4</th>
+		<th>15시<br>7교시</th>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -83,15 +75,15 @@
 		<td></td>
 	  </tr>
 	  <tr>
-		<th>5</th>
+		<th>16시<br>8교시</th>
 		<td></td>
 		<td></td>
 		<td></td>
-	    <td></td>
+		<td></td>
 		<td></td>
 	  </tr>
 	  <tr>
-		<th>6</th>
+		<th>17시<br>9교시</th>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -140,6 +132,7 @@
 		  <option value="15">15시</option>
  		  <option value="16">16시</option>
 		  <option value="17">17시</option>
+		  <option value="18">18시</option>
 		</select>
 	  </div>
 	  <div class="form-group mx-sm-5 mb-2">
@@ -148,34 +141,13 @@
 	  </div>
 	  <div class="form-group mx-sm-5 mb-2">
 		<label for="activity" class="sr-only">교수명</label>
-		<input type="text" id="profname" name="profname" required class="form-control">
+		<input type="text" id="profname" name="profname" class="form-control">
 	  </div>
 	  <div class="form-group mx-sm-5 mb-2">
 		<label for="activity" class="sr-only">강의실</label>
-		<input type="text" id="roomno" name="roomno" required class="form-control">
+		<input type="text" id="roomno" name="roomno" class="form-control">
 	  </div>
 	  <button type="submit" id="btnAdd" class="btn btn-primary mb-2">추가하기</button>
-		<!-- <p id="1a">
-			요일
-		</p>
-		<p id="2a">
-			시작시간
-		</p>
-		<p id="3a">
-			종료시간
-		</p>
-		<p id="1b">
-			수업시간
-		</p>
-		<p id="4a">
-			과목명
-		</p>
-		<p id="5a">
-			교수명
-		</p>
-		<p id="6a">
-			강의실
-		</p> -->
 	</form>
 	</div>
 	
@@ -196,20 +168,7 @@
 			
 			var rowNum;
 			var columnNum;
-
-
-			// const row = table.insertRow();
-			// const dayCell = row.insertCell(0);
-			// const timeCell = row.insertCell(1);
-			// const subjectCell = row.insertCell(2);
-
-			// document.getElementById("1a").innerHTML = dayOfWeek;
-			// document.getElementById("2a").innerHTML = startTime;
-			// document.getElementById("3a").innerHTML = endTime;
-			// document.getElementById("4a").innerHTML = subjectName;
-			// document.getElementById("5a").innerHTML = profname;
-			// document.getElementById("6a").innerHTML = roomNo;
-			// document.getElementById("1b").innerHTML = timeGap;
+			
 			
 			if (dayOfWeek == "Mon") {
 				columnNum = 1;
@@ -318,6 +277,14 @@
 			}
 			table.rows[rowNum].cells[columnNum].innerHTML = '<p style="white-space:pre;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>';
 			table.rows[rowNum].cells[columnNum].style.backgroundColor = getRandomColor();
+			if (timeGap >= 2) {
+				for (var multiTimes = 1; multiTimes < timeGap; multiTimes++) {
+					rowNum++;
+					table.rows[rowNum].cells[columnNum].innerHTML = '<p style="white-space:pre;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>';
+					table.rows[rowNum].cells[columnNum].style.backgroundColor = table.rows[rowNum-1].cells[columnNum].style.getPropertyValue("background-color");
+				}
+			}
+
 			form.reset();
 		});
 		
