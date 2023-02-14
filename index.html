@@ -7,113 +7,204 @@
 <link rel="stylesheet" href="/TimelineEx/style.css">
 </head>
 <body>
-<div class="container" style="float:left; width:40%">
-<table width=400 height="600" style="color: #121212" class="table caption-top">
-<caption>▶   4학년 1학기 시간표  ◀</caption>
-  <tr>
-    <th></th>
-    <th>월</th>
-    <th>화</th>
-    <th>수</th>
-    <th>목</th>
-    <th>금</th>
-  </tr>
-  <tr>
-    <th>9</th>
-    <td></td>
-    <td rowspan="3" style="background-color: #ecc369">응용수학</td>
-    <td></td>
-  	<td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <th>10</th>
-    <td rowspan="3" style="background-color: #f08676">데이터통신</td>
- 	<td rowspan="2" style="background-color: #70a5e9">사이버 물리 시스템</td>
-	<td></td>
+	<div class="container" style="float:left; width:40%">
+	<table width=400 height="600" style="color: #121212" class="table caption-top" id="timeline-table">
+	<caption>▶   4학년 1학기 시간표  ◀</caption>
+	  <tr>
+		<th></th>
+		<th>월</th>
+		<th>화</th>
+		<th>수</th>
+		<th>목</th>
+		<th>금</th>
+	  </tr>
+	  <tr>
+		<th>9</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<th>10</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<th>11</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<th>12</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<th>1</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<th>2</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<th>3</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<th>4</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<th>5</th>
+		<td></td>
+		<td></td>
+		<td></td>
+	    <td></td>
+		<td></td>
+	  </tr>
+	</table>
+	</div>
 
-  </tr>
-  <tr>
-    <th>11</th>
-    <td rowspan="2" style="background-color: #7ad1c0">미래설계구현</td>
-	<td rowspan="3" style="background-color: #9ab1c0">컴퓨터비전</td>
-
-  </tr>
-  <tr>
-    <th>12</th>
-    <td></td>
-    <td rowspan="2" style="background-color: #75ca87">창업옴니버스</td>
-  </tr>
-  <tr>
-    <th>1</th>
-    <td></td>
-    <td></td>
-	<td rowspan="3" style="background-color: #a6c96f">분산컴퓨팅<br>시스템</td>
-  </tr>
-  <tr>
-    <th>2</th>
-	<td rowspan="4" style="background-color: #b05432">캡스톤디자인</td>
-    <td></td>
-    <td></td>
-  	<td></td>
-  </tr>
-  <tr>
-    <th>3</th>
-    <td></td>
-    <td></td>
- 	<td></td>
-	</tr>
-  <tr>
-    <th>4</th>
-    <td></td>
-    <td></td>
-    <td rowspan="2" style="background-color: #9d86e0">창업산학초청세미나I</td>
-	<td></td>
-  </tr>
-  <tr>
-    <th>5</th>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-</div>
-
-<div class="container" style="float:right; width:25%; margin-top:50px; margin-right:200px;">
-<form class="form-inline">
-  <div class="form-group mx-sm-5 mb-2">
-    <label for="day" class="sr-only">요일</label>
-    <select id="day" name="day" class="form-control">
-      <option value="Monday">월요일</option>
-      <option value="Tuesday">화요일</option>
-      <option value="Wednesday">수요일</option>
-      <option value="Thursday">목요일</option>
-      <option value="Friday">금요일</option>
-    </select>
-  </div>
-  <div class="form-group mx-sm-5 mb-2">
-    <label for="start-time" class="sr-only">시작 시간</label>
-    <input type="time" id="start-time" name="start-time" required class="form-control">
-  </div>
-  <div class="form-group mx-sm-5 mb-2">
-    <label for="end-time" class="sr-only">종료 시간</label>
-    <input type="time" id="end-time" name="end-time" required class="form-control">
-  </div>
-  <div class="form-group mx-sm-5 mb-2">
-    <label for="activity" class="sr-only">과목명</label>
-    <input type="text" id="subject" name="subject" required class="form-control">
-  </div>
-  <div class="form-group mx-sm-5 mb-2">
-    <label for="activity" class="sr-only">교수명</label>
-    <input type="text" id="profname" name="profname" required class="form-control">
-  </div>
-  <div class="form-group mx-sm-5 mb-2">
-    <label for="activity" class="sr-only">강의실</label>
-    <input type="text" id="roomno" name="roomno" required class="form-control">
-  </div>
-  <button type="submit" id="btnAdd" class="btn btn-primary mb-2">추가하기</button>
-</form>
-</div>
+	<div class="container" style="float:right; width:25%; margin-top:50px; margin-right:200px;">
+	<form class="form-inline" id="timeline-form">
+	  <div class="form-group mx-sm-5 mb-2">
+		<label for="day" class="sr-only">요일</label>
+		<select id="day" name="day" class="form-control">
+		  <option value="Mon">월요일</option>
+		  <option value="Tue">화요일</option>
+		  <option value="Wed">수요일</option>
+		  <option value="Thur">목요일</option>
+		  <option value="Fri">금요일</option>
+		</select>
+	  </div>
+	  <div class="form-group mx-sm-5 mb-2">
+		<label for="start-time" class="sr-only">시작 시간</label>
+		<select id="start-time" name="start-time" required class="form-control">
+		  <option value="9">9시</option>
+		  <option value="10">10시</option>
+		  <option value="11">11시</option>
+		  <option value="12">12시</option>
+		  <option value="13">13시</option>
+		  <option value="14">14시</option>
+		  <option value="15">15시</option>
+ 		  <option value="16">16시</option>
+		  <option value="17">17시</option>
+		</select>
+	  </div>
+	  <div class="form-group mx-sm-5 mb-2">
+		<label for="end-time" class="sr-only">종료 시간</label>
+		<!-- <input type="time" id="end-time" name="end-time" required class="form-control"> -->
+		<select id="end-time" name="end-time" required class="form-control">
+		  <option value="9">9시</option>
+		  <option value="10">10시</option>
+		  <option value="11">11시</option>
+		  <option value="12">12시</option>
+		  <option value="13">13시</option>
+		  <option value="14">14시</option>
+		  <option value="15">15시</option>
+ 		  <option value="16">16시</option>
+		  <option value="17">17시</option>
+		</select>
+	  </div>
+	  <div class="form-group mx-sm-5 mb-2">
+		<label for="activity" class="sr-only">과목명</label>
+		<input type="text" id="subject" name="subject" required class="form-control">
+	  </div>
+	  <div class="form-group mx-sm-5 mb-2">
+		<label for="activity" class="sr-only">교수명</label>
+		<input type="text" id="profname" name="profname" required class="form-control">
+	  </div>
+	  <div class="form-group mx-sm-5 mb-2">
+		<label for="activity" class="sr-only">강의실</label>
+		<input type="text" id="roomno" name="roomno" required class="form-control">
+	  </div>
+	  <button type="submit" id="btnAdd" class="btn btn-primary mb-2">추가하기</button>
+		<p id="1a">
+			요일
+		</p>
+		<p id="2a">
+			시작시간
+		</p>
+		<p id="3a">
+			종료시간
+		</p>
+		<p id="1b">
+			수업시간
+		</p>
+		<p id="4a">
+			과목명
+		</p>
+		<p id="5a">
+			교수명
+		</p>
+		<p id="6a">
+			강의실
+		</p>
+	</form>
+	</div>
 	
+	<script>
+		const form = document.getElementById("timeline-form");
+		const table = document.getElementById("timeline-table");
+
+		form.addEventListener("submit", function(event) {
+			event.preventDefault();
+
+			const dayOfWeek = document.getElementById("day").value;
+			const startTime = document.getElementById("start-time").value;
+			const endTime = document.getElementById("end-time").value;
+			const subjectName = document.getElementById("subject").value;
+			const profname = document.getElementById("profname").value;
+			const roomNo = document.getElementById("roomno").value;
+			const timeGap = parseInt(endTime)+1;
+
+
+			// const row = table.insertRow();
+			// const dayCell = row.insertCell(0);
+			// const timeCell = row.insertCell(1);
+			// const subjectCell = row.insertCell(2);
+
+			document.getElementById("1a").innerHTML = dayOfWeek;
+			document.getElementById("2a").innerHTML = startTime;
+			document.getElementById("3a").innerHTML = endTime;
+			document.getElementById("4a").innerHTML = subjectName;
+			document.getElementById("5a").innerHTML = profname;
+			document.getElementById("6a").innerHTML = roomNo;
+			document.getElementById("1b").innerHTML = timeGap;
+			
+			if (startTime == "Mon")
+				
+
+			form.reset();
+		});
+	</script>
 </body>
 </html>
