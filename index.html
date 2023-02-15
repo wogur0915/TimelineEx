@@ -216,14 +216,14 @@
 					rowNum = 9;
 					break;
 			}
-			
-			
-			table.rows[rowNum].cells[columnNum].innerHTML = '<p style="white-space:pre;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>';
+						
+			table.rows[rowNum].cells[columnNum].innerHTML = '<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>';
 			table.rows[rowNum].cells[columnNum].style.backgroundColor = getRandomColor();
+			
 			if (timeGap >= 2) {
 				for (var multiTimes = 1; multiTimes < timeGap; multiTimes++) {
 					rowNum++;
-					table.rows[rowNum].cells[columnNum].innerHTML = '<p style="white-space:pre;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>';
+					table.rows[rowNum].cells[columnNum].innerHTML = '<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>';
 					table.rows[rowNum].cells[columnNum].style.backgroundColor = table.rows[rowNum-1].cells[columnNum].style.getPropertyValue("background-color");
 				}
 			}
@@ -243,17 +243,37 @@
 			tableRows[i].style.height = "100px";
 		}
 		
+		// table.onclick = function(event) {
+		// 	let target = event.target;
+		// 	while (target != this) {
+		// 		if (target.tagName == 'TD') {
+		// 			target.innerHTML = '';
+		// 			target.removeAttribute("style");
+		// 			return;
+		// 		}
+		// 		target = target.parentNode;
+		// 	}
+		// };
+		
 		table.onclick = function(event) {
-			let target = event.target;
-			while (target != this) {
-				if (target.tagName == 'TD') {
-					target.innerHTML = '';
-					target.removeAttribute("style");
-					return;
+		  let target = event.target;
+		  while (target != this) {
+			if (target.tagName == 'TD') {
+			  const currentContent = target.innerHTML;
+			  const currentStyle = target.getAttribute('style');
+			  const cells = this.querySelectorAll('td');
+			  cells.forEach(cell => {
+				if (cell.innerHTML === currentContent && cell.getAttribute('style') === currentStyle) {
+				  cell.innerHTML = '';
+				  cell.removeAttribute('style');
 				}
-				target = target.parentNode;
+			  });
+			  return;
 			}
+			target = target.parentNode;
+		  }
 		};
+
 
 	</script>
 </body>
