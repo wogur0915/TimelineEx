@@ -7,148 +7,149 @@
 <link rel="stylesheet" href="/TimelineEx/style.css">
 </head>
 <body>
-	<div class="container" style="float:left; width:40%">
-	<table style="color: #121212;" width="800" height="300" class="table caption-top" id="timeline-table">
-	<caption>▶   4학년 1학기 시간표  ◀</caption>
-	  <tr>
-		<th style="background-color:#FFDBF8;"></th>
-		<th style="background-color:#FFDBF8;">월</th>
-		<th style="background-color:#FFDBF8;">화</th>
-		<th style="background-color:#FFDBF8;">수</th>
-		<th style="background-color:#FFDBF8;">목</th>
-		<th style="background-color:#FFDBF8;">금</th>
-	  </tr>
-	  <tr>
-		<th>9시<br>1교시</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	  </tr>
-	  <tr>
-		<th>10시<br>2교시</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	  </tr>
-	  <tr>
-		<th>11시<br>3교시</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	  </tr>
-	  <tr>
-		<th>12시<br>4교시</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	  </tr>
-	  <tr>
-		<th>13시<br>5교시</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	  </tr>
-	  <tr>
-		<th>14시<br>6교시</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	  </tr>
-	  <tr>
-		<th>15시<br>7교시</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	  </tr>
-	  <tr>
-		<th>16시<br>8교시</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	  </tr>
-	  <tr>
-		<th>17시<br>9교시</th>
-		<td></td>
-		<td></td>
-		<td></td>
-	    <td></td>
-		<td></td>
-	  </tr>
-	</table>
-	</div>
+	
+	<div class="Container" id="conatainer" style="float:left; width:100%; height:100%" align="center">
+		<div class="table-form-wrapper">
+		<table style="color: #121212;" width="800" height="300" class="table caption-top" id="timeline-table">
+		<caption>▶   4학년 1학기 시간표  ◀</caption>
+		  <tr>
+			<th style="background-color:#FFDBF8;"></th>
+			<th style="background-color:#FFDBF8;">월</th>
+			<th style="background-color:#FFDBF8;">화</th>
+			<th style="background-color:#FFDBF8;">수</th>
+			<th style="background-color:#FFDBF8;">목</th>
+			<th style="background-color:#FFDBF8;">금</th>
+		  </tr>
+		  <tr>
+			<th>9시<br>1교시</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<th>10시<br>2교시</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<th>11시<br>3교시</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<th>12시<br>4교시</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<th>13시<br>5교시</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<th>14시<br>6교시</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<th>15시<br>7교시</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<th>16시<br>8교시</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<th>17시<br>9교시</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		</table>
 
-	<div class="container" style="float:right; width:25%; margin-top:50px; margin-right:200px;">
-	<form class="form-inline" id="timeline-form">
-	  <div class="form-group mx-sm-5 mb-2">
-		<label for="day" class="sr-only">요일</label>
-		<select id="day" name="day" class="form-control">
-		  <option value="Mon">월요일</option>
-		  <option value="Tue">화요일</option>
-		  <option value="Wed">수요일</option>
-		  <option value="Thur">목요일</option>
-		  <option value="Fri">금요일</option>
-		</select>
-	  </div>
-	  <div class="form-group mx-sm-5 mb-2">
-		<label for="start-time" class="sr-only">시작 시간</label>
-		<select id="start-time" name="start-time" required class="form-control">
-		  <option value="9">9시</option>
-		  <option value="10">10시</option>
-		  <option value="11">11시</option>
-		  <option value="12">12시</option>
-		  <option value="13">13시</option>
-		  <option value="14">14시</option>
-		  <option value="15">15시</option>
- 		  <option value="16">16시</option>
-		  <option value="17">17시</option>
-		</select>
-	  </div>
-	  <div class="form-group mx-sm-5 mb-2">
-		<label for="end-time" class="sr-only">종료 시간</label>
-		<!-- <input type="time" id="end-time" name="end-time" required class="form-control"> -->
-		<select id="end-time" name="end-time" required class="form-control">
-		  <option value="9">9시</option>
-		  <option value="10">10시</option>
-		  <option value="11">11시</option>
-		  <option value="12">12시</option>
-		  <option value="13">13시</option>
-		  <option value="14">14시</option>
-		  <option value="15">15시</option>
- 		  <option value="16">16시</option>
-		  <option value="17">17시</option>
-		  <option value="18">18시</option>
-		</select>
-	  </div>
-	  <div class="form-group mx-sm-5 mb-2">
-		<label for="activity" class="sr-only">과목명</label>
-		<input type="text" id="subject" name="subject" required class="form-control">
-	  </div>
-	  <div class="form-group mx-sm-5 mb-2">
-		<label for="activity" class="sr-only">교수명</label>
-		<input type="text" id="profname" name="profname" class="form-control">
-	  </div>
-	  <div class="form-group mx-sm-5 mb-2">
-		<label for="activity" class="sr-only">강의실</label>
-		<input type="text" id="roomno" name="roomno" class="form-control">
-	  </div>
-	  <button type="submit" id="btnAdd" class="btn btn-primary mb-2">추가하기</button>
-	</form>
+		<form class="form-inline" id="timeline-form" style="margin-top: 200px; margin-right:50px;">
+		  <div class="form-group mx-sm-5 mb-2">
+			<label for="day" class="sr-only">요일</label>
+			<select id="day" name="day" class="form-control">
+			  <option value="Mon">월요일</option>
+			  <option value="Tue">화요일</option>
+			  <option value="Wed">수요일</option>
+			  <option value="Thur">목요일</option>
+			  <option value="Fri">금요일</option>
+			</select>
+		  </div>
+		  <div class="form-group mx-sm-5 mb-2">
+			<label for="start-time" class="sr-only">시작 시간</label>
+			<select id="start-time" name="start-time" required class="form-control">
+			  <option value="9">9시</option>
+			  <option value="10">10시</option>
+			  <option value="11">11시</option>
+			  <option value="12">12시</option>
+			  <option value="13">13시</option>
+			  <option value="14">14시</option>
+			  <option value="15">15시</option>
+			  <option value="16">16시</option>
+			  <option value="17">17시</option>
+			</select>
+		  </div>
+		  <div class="form-group mx-sm-5 mb-2">
+			<label for="end-time" class="sr-only">종료 시간</label>
+			<!-- <input type="time" id="end-time" name="end-time" required class="form-control"> -->
+			<select id="end-time" name="end-time" required class="form-control">
+			  <option value="9">9시</option>
+			  <option value="10">10시</option>
+			  <option value="11">11시</option>
+			  <option value="12">12시</option>
+			  <option value="13">13시</option>
+			  <option value="14">14시</option>
+			  <option value="15">15시</option>
+			  <option value="16">16시</option>
+			  <option value="17">17시</option>
+			  <option value="18">18시</option>
+			</select>
+		  </div>
+		  <div class="form-group mx-sm-5 mb-2">
+			<label for="activity" class="sr-only">과목명</label>
+			<input type="text" id="subject" name="subject" required class="form-control">
+		  </div>
+		  <div class="form-group mx-sm-5 mb-2">
+			<label for="activity" class="sr-only">교수명</label>
+			<input type="text" id="profname" name="profname" class="form-control">
+		  </div>
+		  <div class="form-group mx-sm-5 mb-2">
+			<label for="activity" class="sr-only">강의실</label>
+			<input type="text" id="roomno" name="roomno" class="form-control">
+		  </div>
+		  <button type="submit" id="btnAdd" class="btn btn-primary mb-2">추가하기</button>
+		</form>
+		</div>
 	</div>
 	
 	<script>

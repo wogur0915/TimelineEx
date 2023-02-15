@@ -8,15 +8,26 @@ table{
 	border-collapse: collapse;
 	font-size: 0.9em;
 	text-align:center;
-	width: 600px;
-	height: 500px;
-	margin-left:150px;
+	  width: 100%;
+  	max-width: 100%;
+  	table-layout: fixed;
+	transform: scale(0.8);
+	flex:1;
 }
 
 .table {
     width: 800px;
     height: 300px;
-	table-layout: fixed;
+	/* table-layout: fixed; */
+}
+
+.table-form-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+.table-form-wrapper > * {
+  flex: 1;
+  margin: 0 100px;
 }
 
 th, td{
@@ -44,20 +55,27 @@ td {
 caption{
 	font-size:30px;
 	margin-bottom:15px;
-	margin-top:40px;
+	margin-top:0;
 	text-align:center;
 }
 
 form {
-	position: fixed;
 	top: 200px;
 	right: 500px;
+	max-width: fit-content;
+	padding-right:200px;
 }
 
 #btnAdd {
-	position: absolute;
+	/* position: absolute; */
 	top: 450px;
 	right: 50px;
+}
+
+Container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 th:first-child, td:first-child {
