@@ -243,6 +243,8 @@
 			tableRows[i].style.height = "100px";
 		}
 		
+		// 	<------------------------------------------------->	
+		//	클릭한 셀 한개만 삭제하는 코드
 		// table.onclick = function(event) {
 		// 	let target = event.target;
 		// 	while (target != this) {
@@ -255,7 +257,7 @@
 		// 	}
 		// };
 		
-		table.onclick = function(event) {
+		table.ondblclick = function(event) {
 		  let target = event.target;
 		  while (target != this) {
 			if (target.tagName == 'TD') {
