@@ -8,8 +8,6 @@ table{
 	border-collapse: collapse;
 	font-size: 0.9em;
 	text-align:center;
-	  width: 100%;
-  	max-width: 100%;
   	table-layout: fixed;
 	transform: scale(0.8);
 	flex:1;
