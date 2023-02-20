@@ -160,130 +160,122 @@
 		</div>
 	</div>
 	
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
-		const form = document.getElementById("timeline-form");
-		const table = document.getElementById("timeline-table");
+		$(document).ready(function() {
+		  const form = $("#timeline-form");
+		  const table = $("#timeline-table");
 
-		form.addEventListener("submit", function(event) {
+		  form.on("submit", function(event) {
 			event.preventDefault();
 
-			const dayOfWeek = document.getElementById("day").value;
-			const startTime = document.getElementById("start-time").value;
-			const endTime = document.getElementById("end-time").value;
-			const subjectName = document.getElementById("subject").value;
-			const profname = document.getElementById("profname").value;
-			const roomNo = document.getElementById("roomno").value;
-			const timeGap = parseInt(endTime)-parseInt(startTime);
-			
-			var rowNum;
-			var columnNum;
-			
+			const dayOfWeek = $("#day").val();
+			const startTime = $("#start-time").val();
+			const endTime = $("#end-time").val();
+			const subjectName = $("#subject").val();
+			const profname = $("#profname").val();
+			const roomNo = $("#roomno").val();
+			const timeGap = parseInt(endTime) - parseInt(startTime);
+
+			let rowNum;
+			let columnNum;
+
 			switch (dayOfWeek) {
-				case "Mon" :
-					columnNum = 1;
-					break;
-				case "Tue" :
-					columnNum = 2;
-					break;
-				case "Wed" :
-					columnNum = 3;
-					break;
-				case "Thur" :
-					columnNum = 4;
-					break;
-				case "Fri" :
-					columnNum = 5;
-					break;
-			}
-			
-			switch (startTime) {
-				case "9" :
-					rowNum = 1;
-					break;
-				case "10" :
-					rowNum = 2;
-					break;
-				case "11" :
-					rowNum = 3;
-					break;
-				case "12" :
-					rowNum = 4;
-					break;
-				case "13" :
-					rowNum = 5;
-					break;
-				case "14" :
-					rowNum = 6;
-					break;
-				case "15" :
-					rowNum = 7;
-					break;
-				case "16" :
-					rowNum = 8;
-					break;
-				case "17" :
-					rowNum = 9;
-					break;
-			}
-						
-			table.rows[rowNum].cells[columnNum].innerHTML = '<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>';
-			table.rows[rowNum].cells[columnNum].style.backgroundColor = getRandomColor();
-			
-			if (timeGap >= 2) {
-				for (var multiTimes = 1; multiTimes < timeGap; multiTimes++) {
-					rowNum++;
-					table.rows[rowNum].cells[columnNum].innerHTML = '<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>';
-					table.rows[rowNum].cells[columnNum].style.backgroundColor = table.rows[rowNum-1].cells[columnNum].style.getPropertyValue("background-color");
-				}
+			  case "Mon":
+				columnNum = 1;
+				break;
+			  case "Tue":
+				columnNum = 2;
+				break;
+			  case "Wed":
+				columnNum = 3;
+				break;
+			  case "Thur":
+				columnNum = 4;
+				break;
+			  case "Fri":
+				columnNum = 5;
+				break;
 			}
 
-			form.reset();
-		});
-		
-		function getRandomColor() {
-			var red = Math.floor(Math.random() * 100) + 100;	
-			var green = Math.floor(Math.random() * 100) + 100;
-			var blue = Math.floor(Math.random() * 100) + 100;
-			return "rgb(" + red + ", " + green + ", " + blue + ")";
-		}
-		
-		var tableRows = table.rows;
-		for (var i = 1; i < tableRows.length; i++) {
-			tableRows[i].style.height = "100px";
-		}
-		
-		// 	<------------------------------------------------->	
-		//	클릭한 셀 한개만 삭제하는 코드
-		// table.onclick = function(event) {
-		// 	let target = event.target;
-		// 	while (target != this) {
-		// 		if (target.tagName == 'TD') {
-		// 			target.innerHTML = '';
-		// 			target.removeAttribute("style");
-		// 			return;
-		// 		}
-		// 		target = target.parentNode;
-		// 	}
-		// };
-		
-		table.ondblclick = function(event) {
-		  let target = event.target;
-		  while (target != this) {
-			if (target.tagName == 'TD') {
-			  const currentContent = target.innerHTML;
-			  const currentStyle = target.getAttribute('style');
-			  const cells = this.querySelectorAll('td');
-			  cells.forEach(cell => {
-				if (cell.innerHTML === currentContent && cell.getAttribute('style') === currentStyle) {
-				  cell.innerHTML = '';
-				  cell.removeAttribute('style');
-				}
-			  });
-			  return;
+			switch (startTime) {
+			  case "9":
+				rowNum = 1;
+				break;
+			  case "10":
+				rowNum = 2;
+				break;
+			  case "11":
+				rowNum = 3;
+				break;
+			  case "12":
+				rowNum = 4;
+				break;
+			  case "13":
+				rowNum = 5;
+				break;
+			  case "14":
+				rowNum = 6;
+				break;
+			  case "15":
+				rowNum = 7;
+				break;
+			  case "16":
+				rowNum = 8;
+				break;
+			  case "17":
+				rowNum = 9;
+				break;
 			}
-			target = target.parentNode;
+
+			table.find("tr:eq(" + rowNum + ")").find("td:eq(" + columnNum + ")").html('<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>').css("background-color", getRandomColor());
+
+			if (timeGap >= 2) {
+			  for (let multiTimes = 1; multiTimes < timeGap; multiTimes++) {
+				rowNum++;
+				table.find("tr:eq(" + rowNum + ")").find("td:eq(" + columnNum + ")").html('<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>').css("background-color", table.find("tr:eq(" + (rowNum - 1) + ")").find("td:eq(" + columnNum + ")").css("background-color"));
+			  }
+			}
+
+			form[0].reset();
+		  });
+
+		  function getRandomColor() {
+			let red = Math.floor(Math.random() * 100) + 100;
+			let green = Math.floor(Math.random() * 100) + 100;
+			let blue = Math.floor(Math.random() * 100) + 100;
+			return "rgb(" + red + ", " + green + ", " + blue + ")";
 		  }
-		};
+
+		  table.find("tr:not(:first-child)").css("height", "100px");
+
+		  // <------------------------------------------------->
+		  // 클릭한 셀 한개만 삭제하는 코드
+		  // table.on("click", function(event) {
+		  //   let target = event.target;
+		  //   while (target != this) {
+		  //     if (target.tagName == "TD") {
+		  //       $(target).html("").removeAttr("style");
+		  //       return;
+		  //     }
+		  //     target = target.parentNode;
+		  //   }
+		  // });
+
+		
+		  $("#timeline-table").on("dblclick", "td", function() {
+		    const currentContent = $(this).html();
+		    const currentStyle = $(this).attr("style");
+		    $("#timeline-table td").each(function() {
+		  	  if ($(this).html() === currentContent && $(this).attr("style") === currentStyle) {
+			    $(this).html("");
+			    $(this).removeAttr("style");
+			  }
+		    });
+		  });
+			
+		});
+
 
 
 	</script>
