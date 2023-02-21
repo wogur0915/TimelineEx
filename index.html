@@ -165,7 +165,6 @@
 		$(document).ready(function() {
 		  const form = $("#timeline-form");
 		  const table = $("#timeline-table");
-		  var subCode;
 
 		  form.on("submit", function(event) {
 			event.preventDefault();
@@ -180,6 +179,7 @@
 
 			let rowNum;
 			let columnNum;
+			let subCode;
 
 			switch (dayOfWeek) {
 			  case "Mon":
@@ -228,16 +228,14 @@
 				rowNum = 9;
 				break;
 			}
-
-			table.find("tr:eq(" + rowNum + ")").find("td:eq(" + columnNum + ")").html('<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>').css("background-color", getRandomColor());
+			
 			subCode = "subCode" + rowNum + columnNum;
-			$("p").addClass(subCode);
+			table.find("tr:eq(" + rowNum + ")").find("td:eq(" + columnNum + ")").html('<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>').css("background-color", getRandomColor()).addClass(subCode);;
 			  
 			if (timeGap >= 2) {
 			  for (let multiTimes = 1; multiTimes < timeGap; multiTimes++) {
 				rowNum++;
-				table.find("tr:eq(" + rowNum + ")").find("td:eq(" + columnNum + ")").html('<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>').css("background-color", table.find("tr:eq(" + (rowNum - 1) + ")").find("td:eq(" + columnNum + ")").css("background-color"));
-				$("p").addClass(subCode);
+				table.find("tr:eq(" + rowNum + ")").find("td:eq(" + columnNum + ")").html('<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>').css("background-color", table.find("tr:eq(" + (rowNum - 1) + ")").find("td:eq(" + columnNum + ")").css("background-color")).addClass(subCode);
 			  }
 			}
 
