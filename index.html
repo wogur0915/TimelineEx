@@ -263,20 +263,6 @@
 		  //     target = target.parentNode;
 		  //   }
 		  // });
-
-		
-		//   $("#timeline-table").on("dblclick", "td", function() {
-		//     const currentContent = $(this).html();
-		//     const currentStyle = $(this).attr("style");
-		//     $("#timeline-table td").each(function() {
-		//   	  if ($(this).html() === currentContent && $(this).attr("style") === currentStyle) {
-		// 	    $(this).html("");
-		// 	    $(this).removeAttr("style");
-		// 	  }
-		//     });
-		//   });
-			
-		// });
 			
 		// 	<----------모든 칸 검사 코드----------->
 		
@@ -292,6 +278,7 @@
 		// 	});
 		// });
 		
+			// 효율화
 			$("#timeline-table").on("dblclick", "td", function() {
 			  const currentClass = $(this).attr("class");
 			  $("#timeline-table td." + currentClass).html("").removeAttr("style").removeClass(currentClass);
