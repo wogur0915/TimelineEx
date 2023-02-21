@@ -165,6 +165,7 @@
 		$(document).ready(function() {
 		  const form = $("#timeline-form");
 		  const table = $("#timeline-table");
+		  var subCode;
 
 		  form.on("submit", function(event) {
 			event.preventDefault();
@@ -229,11 +230,14 @@
 			}
 
 			table.find("tr:eq(" + rowNum + ")").find("td:eq(" + columnNum + ")").html('<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>').css("background-color", getRandomColor());
-
+			subCode = "subCode" + rowNum + columnNum;
+			$("p").addClass(subCode);
+			  
 			if (timeGap >= 2) {
 			  for (let multiTimes = 1; multiTimes < timeGap; multiTimes++) {
 				rowNum++;
 				table.find("tr:eq(" + rowNum + ")").find("td:eq(" + columnNum + ")").html('<p style="white-space:pre; margin-bottom:0;">' + subjectName + '\n' + profname + '\n' + roomNo + '</p>').css("background-color", table.find("tr:eq(" + (rowNum - 1) + ")").find("td:eq(" + columnNum + ")").css("background-color"));
+				$("p").addClass(subCode);
 			  }
 			}
 
@@ -263,19 +267,38 @@
 		  // });
 
 		
-		  $("#timeline-table").on("dblclick", "td", function() {
-		    const currentContent = $(this).html();
-		    const currentStyle = $(this).attr("style");
-		    $("#timeline-table td").each(function() {
-		  	  if ($(this).html() === currentContent && $(this).attr("style") === currentStyle) {
-			    $(this).html("");
-			    $(this).removeAttr("style");
-			  }
-		    });
-		  });
+		//   $("#timeline-table").on("dblclick", "td", function() {
+		//     const currentContent = $(this).html();
+		//     const currentStyle = $(this).attr("style");
+		//     $("#timeline-table td").each(function() {
+		//   	  if ($(this).html() === currentContent && $(this).attr("style") === currentStyle) {
+		// 	    $(this).html("");
+		// 	    $(this).removeAttr("style");
+		// 	  }
+		//     });
+		//   });
 			
+		// });
+			
+		// 	<----------모든 칸 검사 코드----------->
+		
+		// 	$("#timeline-table").on("dblclick", "td", function() {
+		// 	  const currentClass = $(this).attr("class");
+		// 	  $("#timeline-table td").each(function() {
+		// 		if ($(this).attr("class") === currentClass) {
+		// 		  $(this).html("");
+		// 		  $(this).removeAttr("style");
+		// 		  $(this).removeClass(currentClass);
+		// 		}
+		// 	  });
+		// 	});
+		// });
+		
+			$("#timeline-table").on("dblclick", "td", function() {
+			  const currentClass = $(this).attr("class");
+			  $("#timeline-table td." + currentClass).html("").removeAttr("style").removeClass(currentClass);
+			});
 		});
-
 
 
 	</script>
